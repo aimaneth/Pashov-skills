@@ -30,4 +30,4 @@ Runs `forge fmt` first if Foundry is detected, then applies the remaining passes
 
 A per-file summary of every change made, grouped by pass. No changes means the file is already clean - it says so explicitly rather than printing an empty list.
 
-For security vulnerability scanning, see [`security-scan`](../security-scan/).
+For security vulnerability scanning, see [`audit`](../audit/).

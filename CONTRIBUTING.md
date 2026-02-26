@@ -26,7 +26,7 @@ By participating, you agree to our [Code of Conduct](CODE_OF_CONDUCT.md). Please
 
 - **New skill** — Add a focused, self-contained skill for a new capability.
 - **Improve an existing skill** — Sharpen instructions, add attack vectors, fix false positives, improve output format.
-- **Expand reference material** — Add entries to a skill's `references/` files (e.g., new attack vectors to `security-scan`, new lint rules to `lint`).
+- **Expand reference material** — Add entries to a skill's `references/` files (e.g., new attack vectors to `audit`, new lint rules to `lint`).
 - **Documentation** — Fix typos, improve usage examples, clarify instructions.
 - **Bug report** — Open an issue using the bug report template.
 
@@ -75,7 +75,7 @@ description: >
 ---
 ```
 
-The `name` becomes the slash command: `name: security-scan` → `/security-scan`.
+The `name` becomes the slash command: `name: audit` → `/audit`.
 
 **Instruction body**: everything below the frontmatter. Written in plain markdown. Describes exactly what the agent should do — workflow, modes, output format, constraints. See the existing skills for style guidance.
 
@@ -91,7 +91,7 @@ Human-readable documentation. Must include:
 
 Files the agent loads at runtime to inform its work. Examples:
 
-- `security-scan/references/attack-vectors.md` — 52 attack vectors with detect patterns and false-positive signals
+- `audit/references/attack-vectors.md` — 52 attack vectors with detect patterns and false-positive signals
 - `lint/references/rules.md` — detailed rules for each linting pass
 
 Reference files should be structured and precise — the agent reads them as a checklist or specification.
@@ -100,7 +100,7 @@ Reference files should be structured and precise — the agent reads them as a c
 
 Per-project data that users populate themselves. **Not contributed to this repo** — these files exist in the user's own codebase.
 
-Examples from `security-scan`:
+Examples from `audit`:
 
 - `assets/false-positives.md` — known non-issues for a specific codebase
 - `assets/findings/` — prior audit reports used as context
@@ -168,7 +168,7 @@ Test your skill with at least one real invocation on an actual codebase or file.
 
 The most valuable contributions are targeted improvements to existing skills:
 
-**Adding to `references/`** — new attack vectors in `security-scan`, new lint rules in `lint`. Follow the exact format of existing entries (detect pattern + false-positive signal, or rule + rationale).
+**Adding to `references/`** — new attack vectors in `audit`, new lint rules in `lint`. Follow the exact format of existing entries (detect pattern + false-positive signal, or rule + rationale).
 
 **Fixing the instruction body in `SKILL.md`** — tighten a workflow step, clarify output format, add a missing constraint, fix a false-positive in the scanning logic.
 

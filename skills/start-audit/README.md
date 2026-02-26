@@ -24,4 +24,4 @@ Run it from the repo root. It detects Foundry (`foundry.toml`) or Hardhat (`hard
 
 Security researchers and auditors who want to get up to speed on an unfamiliar codebase fast. The output is designed to be dropped into an audit workspace, shared with a team, or used as context for a deeper manual review.
 
-For ongoing security feedback during development, see [`security-scan`](../security-scan/).
+For ongoing security feedback during development, see [`audit`](../audit/).

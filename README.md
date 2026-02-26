@@ -23,7 +23,7 @@ Drop a skill into your AI environment and it gains a focused, reusable capabilit
 | Skill                                      | Description                                                                                      | Category           |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------ |
 | [lint](skills/lint/)                       | Lints Solidity code - unused imports, NatSpec, formatting, naming, custom errors, best practices | Secure Development |
-| [security-scan](skills/security-scan/) | Fast security feedback on Solidity changes while you develop                                     | Secure Development |
+| [audit](skills/audit/) | Fast security feedback on Solidity changes while you develop                                     | Secure Development |
 | [start-audit](skills/start-audit/)         | Full audit prep for security researchers - builds, architecture diagrams, threat model           | Security Research  |
 
 ---
@@ -35,26 +35,26 @@ Drop a skill into your AI environment and it gains a focused, reusable capabilit
 ```bash
 # Sparse-checkout a single skill
 git clone --filter=blob:none --sparse https://github.com/pashov/skills
-cd skills && git sparse-checkout set skills/security-scan
+cd skills && git sparse-checkout set skills/audit
 ```
 
 ```bash
 # Or fetch just the instruction file
-curl -fsSL https://raw.githubusercontent.com/pashov/skills/main/skills/security-scan/SKILL.md \
-  -o security-scan.SKILL.md
+curl -fsSL https://raw.githubusercontent.com/pashov/skills/main/skills/audit/SKILL.md \
+  -o audit.SKILL.md
 ```
 
 **Drop it into your agent:**
 
 | Agent                    | Where to put it                                                                              |
 | ------------------------ | -------------------------------------------------------------------------------------------- |
-| Claude Code (global)     | `~/.claude/skills/security-scan/`                                                          |
-| Claude Code (project)    | `.claude/skills/security-scan/`                                                            |
-| GitHub Copilot (project) | `.github/skills/security-scan/`                                                            |
-| GitHub Copilot (global)  | `~/.copilot/skills/security-scan/`                                                         |
-| Cursor                   | `.cursor/rules/security-scan.md`                                                           |
-| Windsurf                 | `.windsurf/rules/security-scan.md`                                                         |
-| Codex                    | `$skill-installer install https://github.com/pashov/skills/tree/main/skills/security-scan` |
+| Claude Code (global)     | `~/.claude/skills/audit/`                                                          |
+| Claude Code (project)    | `.claude/skills/audit/`                                                            |
+| GitHub Copilot (project) | `.github/skills/audit/`                                                            |
+| GitHub Copilot (global)  | `~/.copilot/skills/audit/`                                                         |
+| Cursor                   | `.cursor/rules/audit.md`                                                           |
+| Windsurf                 | `.windsurf/rules/audit.md`                                                         |
+| Codex                    | `$skill-installer install https://github.com/pashov/skills/tree/main/skills/audit` |
 | Any agent                | Paste `SKILL.md` contents into your system prompt or context window                          |
 
 For Cursor and Windsurf, copy the contents of `SKILL.md` directly into the rules file.
@@ -62,7 +62,7 @@ For Cursor and Windsurf, copy the contents of `SKILL.md` directly into the rules
 **Claude Code** — then invoke by name in a new conversation:
 
 ```
-/security-scan path/to/Contract.sol
+/audit path/to/Contract.sol
 ```
 
 ---

@@ -1,4 +1,4 @@
-# security-scan
+# audit
 
 Fast, simple, stupid but effective security feedback while developing or before committing to version control.
 
@@ -8,21 +8,21 @@ Built for **developers** who want to catch issues early - not a replacement for 
 
 ```bash
 # Review only what changed (default)
-/security-scan
+/audit
 
 # Review a specific file
-/security-scan src/Vault.sol
+/audit src/Vault.sol
 
 # Review the entire repo
-/security-scan ALL
+/audit ALL
 
 # Default run is 2 minutes - use --max-run-time to make it shorter or longer
-/security-scan --max-run-time=30   # quickest gut-check
-/security-scan --max-run-time=300  # deep scan, reads full attack vector reference
+/audit --max-run-time=30   # quickest gut-check
+/audit --max-run-time=300  # deep scan, reads full attack vector reference
 
 # Confidence threshold - only report findings at or above N/100 (default: 80)
-/security-scan --confidence=65    # broader sweep, includes more uncertain findings
-/security-scan --confidence=95    # tight report, near-certain issues only
+/audit --confidence=65    # broader sweep, includes more uncertain findings
+/audit --confidence=95    # tight report, near-certain issues only
 ```
 
 ## What it does
