@@ -29,36 +29,24 @@ Drop a skill into your AI environment and it gains a focused, reusable capabilit
 
 ## Install
 
-**Don't want to clone the whole repo?** Grab just what you need:
+**1. Clone**
 
 ```bash
-# Sparse-checkout a single skill
-git clone --filter=blob:none --sparse https://github.com/pashov/skills
-cd skills && git sparse-checkout set skills/audit
+git clone https://github.com/pashov/skills
 ```
 
-```bash
-# Or fetch just the instruction file
-curl -fsSL https://raw.githubusercontent.com/pashov/skills/main/skills/audit/SKILL.md \
-  -o audit.SKILL.md
-```
+**2. Copy a skill to your agent**
 
-**Drop it into your agent:**
+| Agent                    | Command                                                    |
+| ------------------------ | ---------------------------------------------------------- |
+| Claude Code (global)     | `cp -r skills/audit ~/.claude/skills/audit`                |
+| Claude Code (project)    | `cp -r skills/audit .claude/skills/audit`                  |
+| GitHub Copilot (project) | `cp -r skills/audit .github/skills/audit`                  |
+| GitHub Copilot (global)  | `cp -r skills/audit ~/.copilot/skills/audit`               |
+| Cursor / Windsurf        | Append `skills/audit/SKILL.md` to your agent rules file    |
+| Any agent                | Paste `skills/audit/SKILL.md` into your system prompt      |
 
-| Agent                    | Where to put it                                                                    |
-| ------------------------ | ---------------------------------------------------------------------------------- |
-| Claude Code (global)     | `~/.claude/skills/audit/`                                                          |
-| Claude Code (project)    | `.claude/skills/audit/`                                                            |
-| GitHub Copilot (project) | `.github/skills/audit/`                                                            |
-| GitHub Copilot (global)  | `~/.copilot/skills/audit/`                                                         |
-| Cursor                   | `.cursor/rules/audit.md`                                                           |
-| Windsurf                 | `.windsurf/rules/audit.md`                                                         |
-| Codex                    | `$skill-installer install https://github.com/pashov/skills/tree/main/skills/audit` |
-| Any agent                | Paste `SKILL.md` contents into your system prompt or context window                |
-
-For Cursor and Windsurf, copy the contents of `SKILL.md` directly into the rules file.
-
-**Claude Code** — then invoke by name in a new conversation:
+**3. Invoke**
 
 ```
 /audit path/to/Contract.sol
