@@ -43,7 +43,8 @@ git clone https://github.com/pashov/skills
 | Claude Code (project)    | `cp -r skills/audit {project-dir}/.claude/skills/audit`    |
 | GitHub Copilot (project) | `cp -r skills/audit {project-dir}/.github/skills/audit`    |
 | GitHub Copilot (global)  | `cp -r skills/audit ~/.copilot/skills/audit`               |
-| Cursor / Windsurf        | Append `skills/audit/SKILL.md` to your agent rules file    |
+| Cursor (global)          | `cp skills/audit/SKILL.md ~/.cursor/commands/audit.md`     |
+| Cursor (project)         | `cp skills/audit/SKILL.md {project-dir}/.cursor/commands/audit.md` |
 | Any agent                | Paste `skills/audit/SKILL.md` into your system prompt      |
 
 **3. Invoke**
