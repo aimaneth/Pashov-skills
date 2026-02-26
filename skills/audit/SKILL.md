@@ -8,7 +8,7 @@ description: Fast, focused security feedback on Solidity code while you develop 
 <context>
 Fast, focused security feedback while you're developing. Catch real issues early - before they reach an audit or mainnet.
 
-When `--max-run-time` is 300s or more, read the full attack vector reference before scanning:
+Always read the full attack vector reference before scanning:
 
 ```
 references/attack-vectors.md
@@ -32,21 +32,17 @@ It defines the disclaimer, severity classification, output format, and ordering 
 - **Default** (no arguments): run `git diff HEAD --name-only`, filter for `.sol` files. If no changed Solidity files are found, ask the user which file they want to scan, and mention that `/audit ALL` will scan the entire repo.
 - **ALL**: scan all `.sol` files in the repo (exclude `lib/`, `out/`, `node_modules/`, `.git/`, and test files).
 - **`$filename`**: scan that specific file only.
-- **`--max-run-time=N`** (optional, in seconds, default `120`): set the time budget. Use a lower value for a quicker gut-check; use a higher value for a deeper scan. Whatever the budget, always prioritise CRITICAL and HIGH vectors first — if time runs short, those are covered before anything lower.
+- **`--max-run-time=N`** (optional, in seconds, default `150`): set the time budget. Use a lower value for a quicker gut-check; use a higher value for a deeper scan. Whatever the budget, always prioritise CRITICAL and HIGH vectors first — if time runs short, those are covered before anything lower.
 - **`--confidence=N`** (optional, default `80`): minimum confidence score (0–100) a finding must reach to be reported. Lower values cast a wider net; higher values report only near-certain issues. Example: `--confidence=70` for a broad sweep, `--confidence=95` for a tight, high-signal report.
 - **`--reasoning=N`** (optional, default `75`): depth of reasoning to apply (0–100). Low values move faster with lighter analysis; high values think harder, consider more edge cases, and re-examine uncertain findings before reporting. Example: `--reasoning=50` for a quick pass, `--reasoning=100` for maximum scrutiny.
 
 ## Time Budget
 
-The default run time is **120 seconds**. Spend the budget doing your best work — do not artificially restrict which severities you report. Always work in this priority order so the most dangerous findings are never skipped:
+The default run time is **150 seconds**. Spend the budget doing your best work — do not artificially restrict which severities you report. Always work in this priority order so the most dangerous findings are never skipped:
 
 1. Scan for CRITICAL vectors first across all in-scope files.
 2. Scan for HIGH vectors.
 3. Scan for MEDIUM, then LOW, with remaining time.
-
-If the budget is tight, rely on built-in knowledge of Solidity attack vectors instead of reading `references/attack-vectors.md`. At 300 seconds or more, read the full reference first — it sharpens detection across all 49 vectors.
-
-**Built-in high-yield vectors** (used when time is short): reentrancy (single, cross-function, read-only), missing/incorrect access control, unprotected initializer, oracle spot-price manipulation, flash loan price manipulation, unchecked arithmetic in value flows, msg.value reuse in loop/multicall, delegatecall to user-controlled address, signature replay, abi.encodePacked hash collision, price slippage (no min output).
 
 ## Confidence Scoring
 
