@@ -46,8 +46,8 @@ Do not report INFO findings.
 
 **Location** `ContractName.functionName` · line N
 **Confidence** N
-**Impact** <what an attacker concretely achieves — funds stolen, contract frozen, invariant broken, etc.>
-**Description** <vector name — what is wrong and why it matters — the exact code path that enables it>
+**Impact** <full sentence explaining what an attacker concretely achieves: who is affected, what they lose or gain, and what the worst-case outcome is — e.g. "An attacker can drain all ETH held by the contract in a single transaction, causing permanent loss of user funds with no recovery path.">
+**Description** <the vulnerable code pattern and why it is exploitable, in 1–2 sentences>
 **Mitigation** <concrete recommendation using text and inline code references, no fenced code blocks>
 
 ---
