@@ -19,37 +19,17 @@ Drop a skill into your AI environment and it gains a focused, reusable capabilit
 
 ## Skills
 
-| Skill                            | Description                                                                                      | Category           |
-| -------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------ |
-| [audit](skills/audit/)           | Fast security feedback on Solidity changes while you develop                                     | Secure Development |
+| Skill                                | Description                                                                                      | Category           |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------ |
+| [audit](skills/audit/)               | Fast security feedback on Solidity changes while you develop                                     | Secure Development |
 | [audit-helper](skills/audit-helper/) | Full audit prep for security researchers - builds, architecture diagrams, threat model           | Security Research  |
-| [lint](skills/lint/)             | Lints Solidity code - unused imports, NatSpec, formatting, naming, custom errors, best practices | Secure Development |
+| [lint](skills/lint/)                 | Lints Solidity code - unused imports, NatSpec, formatting, naming, custom errors, best practices | Secure Development |
 
 ---
 
 ## Install
 
-**1. Clone**
-
-```bash
-git clone https://github.com/pashov/skills
-```
-
-**2. Copy a skill to your agent**
-
-| Agent                   | Command                                                |
-| ----------------------- | ------------------------------------------------------ |
-| Claude Code (global)    | `cp -r skills/audit ~/.claude/skills/audit`            |
-| GitHub Copilot (global) | `cp -r skills/audit ~/.copilot/skills/audit`           |
-| Cursor (global)         | `cp skills/audit/SKILL.md ~/.cursor/commands/audit.md` |
-
-**3. Invoke**
-
-```
-/audit path/to/Contract.sol
-```
-
-Each skill has its own README with all modes, flags, and usage examples — see [skills/audit/README.md](skills/audit/README.md).
+TODO
 
 ---
 
