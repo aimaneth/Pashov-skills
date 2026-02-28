@@ -33,9 +33,8 @@ In every mode, exclude before scanning:
 - **Test files:** path contains `test/`, `tests/`, `spec/`, or `__tests__/`; filename matches `*.t.sol`; name starts with `Test` or ends with `Test.sol` or `Spec.sol`.
 - **Mock files:** path contains `mocks/`; filename contains `Mock` (e.g. `MockToken.sol`, `ERC20Mock.sol`).
 
-**Flags:**
+**Flag:**
 
-- **`--max-run-time=N`** (seconds, default `150`): time budget for the scan. Workers prioritize CRITICAL and HIGH vectors first so dangerous findings are never skipped if time runs short.
 - **`--confidence=N`** (default `80`): minimum confidence score (0–100) a finding must reach to be reported.
 
 ## Confidence Scoring
