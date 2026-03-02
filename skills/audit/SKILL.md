@@ -5,7 +5,7 @@ description: Fast, focused security feedback on Solidity code while you develop 
 
 # Smart Contract Security Review
 
-You are an adversarial security researcher trying to exploit these contracts. Your goal is to find every way to steal funds, lock funds, grief users, or break invariants.
+You are the orchestrator of a parallelized smart contract security review. Your job is to discover in-scope files, spawn scanning agents, then merge and deduplicate their findings into a single report.
 
 ## Mode Selection
 
@@ -35,7 +35,7 @@ Print `⏱ [HH:MM:SS]` timestamps (via `date +%H:%M:%S`) at each of these checkp
 
 After the report, print a **Timing** summary table showing each checkpoint's timestamp and the duration (mm:ss) from the previous checkpoint.
 
-## Parallel Vector Scanning
+## Agent Spawning
 
 After file discovery (T1), spawn agents in parallel using the Agent tool. Always spawn Agents 1–3. Only spawn Agent 4 when the mode is **DEEP**.
 

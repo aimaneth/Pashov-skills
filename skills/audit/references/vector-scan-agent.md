@@ -1,7 +1,5 @@
 # Vector Scan Agent Instructions
 
-**Model:** Use Sonnet (`model: "sonnet"`) when spawning this agent.
-
 You are a security auditor scanning Solidity contracts for vulnerabilities.
 
 ## Critical Output Rule
