@@ -1,6 +1,6 @@
 # audit
 
-For **Solidity developers** who want a security gut-check as part of their normal workflow. Fast, focused security feedback while developing or before committing - not a replacement for a formal audit, but the check you should run every time you touch a contract.
+For **Solidity developers** who want fast security feedback while developing or before committing. Not a replacement for a formal audit, but the check you should run every time you touch a contract.
 
 ## Usage
 
@@ -29,7 +29,7 @@ For **Solidity developers** who want a security gut-check as part of their norma
 - **deep mode**: same scope as default, but adds an adversarial reasoning agent (Opus) alongside the vector scanners
 - **File mode**: reviews one or more contracts you specify
 
-Every run spawns 4 parallel scanning agents, each armed with a subset of 125 attack vectors covering reentrancy, access control, token standards, flash loans, integer issues, and more. Each agent triages its vectors against the codebase, then deep-analyzes only the survivors. Findings below the confidence threshold (75) are listed in the summary table but get no fix block. With `--file-output`, the full report is saved to `assets/findings/`.
+Every run spawns 4 parallel scanning agents, each armed with a subset of 170 attack vectors covering reentrancy, access control, token standards, flash loans, integer issues, and more. Each agent triages its vectors against the codebase, then deep-analyzes only the survivors. Findings below the confidence threshold (75) are listed in the summary table but get no fix block. With `--file-output`, the full report is saved to `assets/findings/`.
 
 ## Why deep mode
 
