@@ -19,6 +19,14 @@ You are the orchestrator of a parallelized smart contract security audit. Your j
 
 - `--file-output` (off by default): also write the report to a markdown file (path per `{resolved_path}/report-formatting.md`). Without this flag, output goes to the terminal only. Never write a report file unless the user explicitly passes `--file-output`.
 
+## Version Check
+
+After printing the banner, run two parallel tool calls: (a) Read the local `VERSION` file from the same directory as this skill, (b) Bash `curl -sf https://raw.githubusercontent.com/pashov/skills/main/solidity-auditor/VERSION`. If the remote fetch succeeds and the versions differ, print:
+
+> ⚠️ You are not using the latest version. Please upgrade for best security coverage. See https://github.com/pashov/skills#install--run
+
+Then continue normally. If the fetch fails (offline, timeout), skip silently.
+
 ## Orchestration
 
 **Turn 1 — Discover.** Print the banner, then in the same message make parallel tool calls: (a) Bash `find` for in-scope `.sol` files per mode selection, (b) Glob for `**/references/attack-vectors/attack-vectors-1.md` and extract the `references/` directory path (two levels up). Use this resolved path as `{resolved_path}` for all subsequent references.

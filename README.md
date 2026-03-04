@@ -17,6 +17,12 @@ git clone https://github.com/pashov/skills.git && cp -r skills/solidity-auditor 
 
 The skill is then invocable as `/solidity-auditor`.
 
+**Update to latest:** `cd` into the cloned `skills` repo and run:
+
+```bash
+git pull && cp -r solidity-auditor ~/.claude/commands/solidity-auditor
+```
+
 ---
 
 ## Skills
