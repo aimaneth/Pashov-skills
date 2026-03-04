@@ -13,6 +13,7 @@ Not a substitute for a formal audit - but the check you should never skip.
 ## Demo
 
 _Portrayed below: finding multiple high-confidence vulnerabilities in a codebase_
+
 ![Running solidity-auditor in terminal](../static/skill_pag.gif)
 
 ## Usage
